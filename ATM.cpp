@@ -1,34 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int SECRET_CODE = 1234;
-int choice;
-
+int SECRET_CODE;
+int CHOICE;
+int NEW_CODE;
 void clrscr() {
     system("@cls||clear");
 }
 int userRegister() {
     clrscr();
-    printf("Registering user...\n");
-
+    printf("Enter New Code: ");
+    scanf("%d", &SECRET_CODE);
     return 0;
 }
+
 int userLogin() {
     clrscr();
-    printf("Logging in user...\n");
+    printf("Log in \n");
+    scanf("%d", &SECRET_CODE);
     return 0;
 }
 int AccMenu() {
     while (1) {
-        printf(" %d \n", SECRET_CODE);
         printf("\n");
         printf("1) Register \n");
         printf("2) Login \n");
         printf("3) exit \n");
         printf(" \n");
         printf("====>");
-        scanf("%d", &choice);
-        switch (choice) {
+        scanf("%d", &CHOICE);
+        switch (CHOICE) {
             case 1:
                 userRegister();
                 break;
@@ -40,6 +40,7 @@ int AccMenu() {
             default:
                 clrscr();
                 printf("Invalid choice. Please try again.\n");
+                break;
         }
     }
 }
